@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aula.meuprojeto10"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+    
+    <!-- permissão para receber dados de Mapas a partir da API assinada -->
+    <permission 
+        android:name="com.aula.meuprojeto10.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"
+        ></permission>
+    
+    <!-- permissão para receber dados de Mapas -->
+    <uses-permission android:name="com.aula.meuprojeto10.permission.MAPS_RECEIVE"/>
+    <!-- permissão para acessar a Internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- permissão para gravar dados externos em nosso dispositivo -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- permissão para verificar o estado da rede wifi -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- permissão para acessar a posição do usuário por triangulação de antenas -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- permissão para acessar a posição pelo GPS disponível no aparelho -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- permissão para verificar o estado da rede, para disponibilidade de acesso a dados -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- permissão para acessar os serviços do google -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+	
+    <!-- indicação de que esta aplicação requer o OpenGL ES V2 presente no dispositivo -->
+    <uses-feature 
+        android:glEsVersion="0x00020000"
+        android:required="true"
+     />
+    
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Principal"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Chave do Google Play Services para o serviço de Mapas -->
+        <meta-data 
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCx2IWrPchlkKMjWTjgEyK21HNK-p9fpKg"
+         />
+        <!-- Requerido pelo Google Play Services. Número de versão do Google Play Services -->
+        <meta-data 
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"
+         />
+        
+    </application>
+
+</manifest>
